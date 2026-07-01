@@ -24,3 +24,23 @@ select,
 textarea {
   font: inherit;
 }
+
+@keyframes gatePulse {
+  0%,
+  100% {
+    box-shadow: 0 0 18px rgba(245, 158, 11, 0.16);
+  }
+  50% {
+    box-shadow: 0 0 42px rgba(34, 211, 238, 0.18), 0 0 24px rgba(245, 158, 11, 0.18);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
+}
