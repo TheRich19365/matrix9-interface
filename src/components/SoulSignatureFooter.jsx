@@ -1,7 +1,7 @@
 import React from "react";
 import { Music2, Sparkles, Youtube } from "lucide-react";
 import { contactLinks } from "../data/contactLinks.js";
-import { ConfiguredExternalLink, EmailAction, ExternalContactLink, LineAction, SupportEmailAction } from "./contactActions.jsx";
+import { ConfiguredExternalLink, CopyLineIdAction, EmailAction, ExternalContactLink, LineAction, SupportEmailAction } from "./contactActions.jsx";
 
 export default function SoulSignatureFooter({ onCopyLine, copied }) {
   return (
@@ -17,7 +17,8 @@ export default function SoulSignatureFooter({ onCopyLine, copied }) {
           <p className="mt-1 text-sm leading-7 text-cyan-100">พื้นที่สะท้อนตัวตนผ่าน Pattern การสนทนา และประสบการณ์ของมนุษย์</p>
         </div>
         <div className="flex max-w-xl flex-wrap gap-2 lg:justify-end">
-          <LineAction onCopyLine={onCopyLine} copied={copied}>LINE OA {contactLinks.lineOa.id}</LineAction>
+          <LineAction onCopyLine={onCopyLine} copied={copied}>LINE Official</LineAction>
+          <CopyLineIdAction onCopyLine={onCopyLine} copied={copied} />
           <EmailAction />
           <ExternalContactLink href={contactLinks.portfolio.url}>{contactLinks.portfolio.label}</ExternalContactLink>
           <ExternalContactLink href={contactLinks.youtube.url}>

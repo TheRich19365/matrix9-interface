@@ -1,7 +1,7 @@
 import React from "react";
-import { MessageCircle, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { contactLinks } from "../data/contactLinks.js";
-import { EmailAction, LineAction } from "./contactActions.jsx";
+import { CopyLineIdAction, EmailAction, LineAction } from "./contactActions.jsx";
 
 function ServiceCard({ tone, title, subtitle, energy, duration, children, topics, scope, primaryCta, onCopyLine, copied }) {
   const toneClass =
@@ -39,9 +39,7 @@ function ServiceCard({ tone, title, subtitle, energy, duration, children, topics
       </div>
       <div className="mt-5 flex flex-wrap gap-2">
         <LineAction onCopyLine={onCopyLine} copied={copied}>{primaryCta}</LineAction>
-        <LineAction onCopyLine={onCopyLine} copied={copied} className="border border-white/10 bg-none shadow-none">
-          สอบถามรายละเอียดก่อน
-        </LineAction>
+        <CopyLineIdAction onCopyLine={onCopyLine} copied={copied} />
       </div>
     </article>
   );
@@ -85,7 +83,7 @@ export default function ResultConversationSection({ onCopyLine, copied }) {
           title="Destiny Matrix Deep Talk"
           subtitle="บทสนทนาเชิงลึก"
           energy="777"
-          duration="ประมาณ 45–60 นาที"
+          duration="ประมาณ 45-60 นาที"
           topics={["pattern ซ้ำในชีวิต", "จุดติดขัดและศักยภาพที่ยังไม่ถูกใช้", "บริบทส่วนตัว ความสัมพันธ์ งาน หรือธุรกิจ", "ทิศทางพัฒนาแบบลึกและเป็นรูปธรรม"]}
           scope="ใช้ Destiny Matrix เป็นฐานหลัก ร่วมกับ Matrix 9, ไพ่, AI-assisted organization/comparison และเครื่องมือเชิงสัญลักษณ์เมื่อเหมาะสม AI เป็นตัวช่วยจัดระบบ ส่วน Win เป็นผู้ฟัง ตีความ เชื่อมโยง ตั้งคำถาม และถือพื้นที่สนทนา"
           primaryCta="เปิดบทสนทนาเชิงลึกผ่าน LINE OA"
@@ -97,8 +95,9 @@ export default function ResultConversationSection({ onCopyLine, copied }) {
         </ServiceCard>
       </div>
       <div className="mt-5 flex flex-wrap gap-2">
-        <LineAction onCopyLine={onCopyLine} copied={copied}>คัดลอก LINE Official {contactLinks.lineOa.id}</LineAction>
+        <LineAction onCopyLine={onCopyLine} copied={copied}>เปิด LINE Official</LineAction>
         <EmailAction>สอบถามผ่าน Email</EmailAction>
+        <CopyLineIdAction onCopyLine={onCopyLine} copied={copied} />
       </div>
       <p className="mt-3 text-xs leading-6 text-slate-400">ติดต่อสอบถามผ่าน LINE Official หรืออีเมล โดย LINE ยังคงเป็นช่องทางหลักสำหรับการนัดพูดคุย</p>
     </section>

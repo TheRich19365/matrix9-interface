@@ -1,7 +1,7 @@
 import React from "react";
 import { MessageCircle } from "lucide-react";
 import { contactLinks } from "../data/contactLinks.js";
-import { EmailAction, LineAction, SupportEmailAction } from "./contactActions.jsx";
+import { CopyLineIdAction, EmailAction, LineAction, SupportEmailAction } from "./contactActions.jsx";
 
 export default function ContactAccess({ onCopyLine, copied }) {
   return (
@@ -18,8 +18,9 @@ export default function ContactAccess({ onCopyLine, copied }) {
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
-          <LineAction onCopyLine={onCopyLine} copied={copied}>คัดลอก LINE ID</LineAction>
+          <LineAction onCopyLine={onCopyLine} copied={copied}>เปิด LINE Official</LineAction>
           <EmailAction />
+          <CopyLineIdAction onCopyLine={onCopyLine} copied={copied} />
         </div>
       </div>
       <div className="mt-3 border-t border-white/10 pt-3">

@@ -1,5 +1,4 @@
 import React from "react";
-import { MessageCircle } from "lucide-react";
 import { contactLinks } from "../data/contactLinks.js";
 import { EmailAction, ExternalContactLink, LineAction } from "./contactActions.jsx";
 
@@ -17,10 +16,7 @@ export default function AppHeader({ onCopyLine, copied }) {
           </div>
         </div>
         <div className="flex flex-wrap items-center gap-2">
-          <LineAction onCopyLine={onCopyLine} copied={copied} className="px-3">
-            <MessageCircle className="h-4 w-4" aria-hidden="true" />
-            {contactLinks.lineOa.label}
-          </LineAction>
+          <LineAction onCopyLine={onCopyLine} copied={copied} className="px-3">LINE OA</LineAction>
           <EmailAction className="px-3" />
           <ExternalContactLink href={contactLinks.portfolio.url}>{contactLinks.portfolio.label}</ExternalContactLink>
         </div>

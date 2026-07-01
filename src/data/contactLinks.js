@@ -29,7 +29,7 @@ const emailAddress = "Souloflove19365@gmail.com";
 export const contactLinks = {
   lineOa: {
     id: "@514wppkc",
-    addFriendUrl: "REPLACE_WITH_LINE_OA_ADD_FRIEND_URL",
+    addFriendUrl: "https://line.me/R/ti/p/%40514wppkc",
     label: "LINE Official",
     enabled: true
   },
