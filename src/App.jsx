@@ -17,7 +17,7 @@ import HiddenPotential from "./components/HiddenPotential.jsx";
 import CoreTension from "./components/CoreTension.jsx";
 import ActivationKeys from "./components/ActivationKeys.jsx";
 import AppHeader from "./components/AppHeader.jsx";
-import ContactAccess from "./components/ContactAccess.jsx";
+import EcosystemFooter from "./components/EcosystemFooter.jsx";
 import ResultConversationSection from "./components/ResultConversationSection.jsx";
 import SoulSignatureFooter from "./components/SoulSignatureFooter.jsx";
 import SocialExport from "./components/export/SocialExport.jsx";
@@ -231,7 +231,6 @@ export default function App() {
           <h1 className="text-3xl font-bold leading-tight sm:text-5xl">Matrix 9 Interface</h1>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300">กรอกวันเดือนปีเกิดเพื่อสร้าง Matrix 9 Interface ระบบนี้เป็นการอ่านเชิงสัญลักษณ์และพฤติกรรม เพื่อการเข้าใจตัวเอง ไม่ใช่การฟันธงชะตาชีวิต</p>
         </header>
-        <ContactAccess onCopyLine={copyLineId} copied={copied === "line"} />
 
         <section className="grid gap-6 lg:grid-cols-[0.85fr_1.15fr]">
           <form onSubmit={generate} className="rounded-[1.6rem] border border-white/10 bg-white/[0.065] p-5 shadow-aura backdrop-blur-xl">
@@ -339,7 +338,8 @@ export default function App() {
             <ResultConversationSection onCopyLine={copyLineId} copied={copied === "line"} />
           </>
         )}
-        <SoulSignatureFooter onCopyLine={copyLineId} copied={copied === "line"} />
+        <SoulSignatureFooter />
+        <EcosystemFooter />
       </div>
     </main>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import { Sparkles } from "lucide-react";
 import { contactLinks } from "../data/contactLinks.js";
-import { CopyLineIdAction, EmailAction, LineAction } from "./contactActions.jsx";
+import { LineAction } from "./contactActions.jsx";
 
 function ServiceCard({ tone, title, subtitle, energy, duration, children, topics, scope, primaryCta, onCopyLine, copied }) {
   const toneClass =
@@ -39,7 +39,6 @@ function ServiceCard({ tone, title, subtitle, energy, duration, children, topics
       </div>
       <div className="mt-5 flex flex-wrap gap-2">
         <LineAction onCopyLine={onCopyLine} copied={copied}>{primaryCta}</LineAction>
-        <CopyLineIdAction onCopyLine={onCopyLine} copied={copied} />
       </div>
     </article>
   );
@@ -94,12 +93,6 @@ export default function ResultConversationSection({ onCopyLine, copied }) {
           บทเรียน พลังที่ใช้บ่อย และพื้นที่ที่อาจเติบโตต่อได้อย่างนุ่มนวล
         </ServiceCard>
       </div>
-      <div className="mt-5 flex flex-wrap gap-2">
-        <LineAction onCopyLine={onCopyLine} copied={copied}>เปิด LINE Official</LineAction>
-        <EmailAction>สอบถามผ่าน Email</EmailAction>
-        <CopyLineIdAction onCopyLine={onCopyLine} copied={copied} />
-      </div>
-      <p className="mt-3 text-xs leading-6 text-slate-400">ติดต่อสอบถามผ่าน LINE Official หรืออีเมล โดย LINE ยังคงเป็นช่องทางหลักสำหรับการนัดพูดคุย</p>
     </section>
   );
 }
