@@ -133,16 +133,17 @@ export function ExportBeingArchitecture({ reading, mode = "full" }) {
       <p className="text-xs font-black uppercase tracking-[0.22em] text-fuchsia-100">Being Architecture — Cosmic Archetype</p>
       <div className="mt-4 grid gap-4 md:grid-cols-3">
         {[
-          ["Primary Core Energy", being.primary],
-          ["Supporting Star Resonance", being.supporting],
-          ["Earth Integration", being.earthIntegration]
+          ["PRIMARY CORE ENERGY", being.primary],
+          ["SUPPORTING STAR RESONANCE", being.supporting],
+          ["EARTH INTEGRATION PATH", being.earthIntegration]
         ].map(([label, item]) => (
           <article key={label} className="rounded-2xl border border-white/10 bg-slate-950/45 p-4">
             <p className="text-[0.68rem] font-bold uppercase tracking-[0.16em] text-cyan-100">{label}</p>
             <h3 className="mt-2 text-2xl font-black">{item.name}</h3>
+            {item.gate && <p className="mt-1 text-xs font-bold text-amber-100">Gate {item.gate} · แนวทางเชื่อมพลังสู่ชีวิตจริง</p>}
             <p className="mt-1 text-sm text-amber-100">{item.title}</p>
             <p className="mt-2 text-sm leading-6 text-slate-200">{item.keywords.slice(0, 4).join(" · ")}</p>
-            <p className="mt-2 text-base leading-7 text-slate-100">{item.shortMeaning}</p>
+            <p className="mt-2 text-base leading-7 text-slate-100">{item.shortMeaning || item.meaning}</p>
           </article>
         ))}
       </div>

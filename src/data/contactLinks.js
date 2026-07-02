@@ -1,8 +1,16 @@
+import { appVersion } from "./appVersion.js";
+
 const supportSubject = "แจ้งปัญหาการใช้งาน Matrix 9";
 const supportBody = [
   "สวัสดีครับ Win Soul of Love",
   "",
   "ฉันพบปัญหาในการใช้งาน Matrix 9",
+  "",
+  appVersion.productName,
+  `Version: ${appVersion.version}`,
+  "",
+  "App Version:",
+  appVersion.version,
   "",
   "รายละเอียดปัญหา:",
   "-",
@@ -68,6 +76,12 @@ export const contactLinks = {
     label: "Instagram",
     handle: "@souloflove19365",
     enabled: true
+  },
+  tiktok: {
+    url: "REPLACE_WITH_TIKTOK_URL",
+    label: "TikTok",
+    handle: "",
+    enabled: false
   },
   logo: {
     src: "/soul-of-love-logo.png",

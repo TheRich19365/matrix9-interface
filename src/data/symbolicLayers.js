@@ -186,6 +186,138 @@ export const beingSelectionRules = {
   }
 };
 
+export const beingScoringProfiles = {
+  stableOrder: [
+    "earth_seed",
+    "sirius",
+    "pleiadian",
+    "arcturian",
+    "andromedan",
+    "lyran",
+    "orion",
+    "venusian",
+    "mintakan",
+    "atlantean",
+    "avian_blue_ray"
+  ],
+  affinityGates: {
+    earth_seed: [4, 6],
+    sirius: [4, 7, 9],
+    pleiadian: [2, 9],
+    arcturian: [3, 7],
+    andromedan: [3, 5],
+    lyran: [1, 5],
+    orion: [1, 7, 8],
+    venusian: [2, 6, 9],
+    mintakan: [2, 7],
+    atlantean: [8, 9],
+    avian_blue_ray: [3, 5, 9]
+  },
+  weights: {
+    dominantGate: 10,
+    amplifiedGate: 3,
+    presentGate: 2,
+    lifePath: 6,
+    dominantCombo: 5,
+    zeroCombo: 4,
+    zeroRelevant: 2,
+    timeline: 1
+  }
+};
+
+export const earthIntegrationPaths = {
+  1: {
+    id: "gate_1_self_directed_initiative",
+    gate: 1,
+    name: "Gate 1 Integration",
+    title: "Self-Directed Initiative",
+    thaiTitle: "แนวทางริเริ่มจากตัวตน",
+    keywords: ["identity", "initiative", "self-direction", "beginning"],
+    meaning: "พื้นที่ที่ Matrix ชวนให้นำพลังตัวตนออกมาเริ่มก้าวเล็ก ๆ ด้วยการเลือกของตัวเอง",
+    shortMeaning: "ฝึกริเริ่ม ตัดสินใจ และให้ตัวตนมีพื้นที่นำทางชีวิตจริง"
+  },
+  2: {
+    id: "gate_2_emotional_awareness",
+    gate: 2,
+    name: "Gate 2 Integration",
+    title: "Emotional Awareness",
+    thaiTitle: "แนวทางรับรู้อารมณ์อย่างอ่อนโยน",
+    keywords: ["emotion", "empathy", "receiving", "sensitivity"],
+    meaning: "พื้นที่ที่ Matrix ชวนให้ฟังความรู้สึกอย่างเป็นมิตร และแยกเสียงหัวใจของตัวเองออกจากเสียงรอบตัว",
+    shortMeaning: "ฝึกรับรู้อารมณ์ ตั้งขอบเขตทางใจ และดูแลความอ่อนไหวให้เป็นพลัง"
+  },
+  3: {
+    id: "gate_3_expressive_practice",
+    gate: 3,
+    name: "Gate 3 Integration",
+    title: "Expressive Practice",
+    thaiTitle: "แนวทางฝึกการแสดงออก",
+    keywords: ["voice", "expression", "creativity", "communication"],
+    meaning: "พื้นที่ที่ Matrix ชวนให้เปลี่ยนความคิดและความรู้สึกภายในเป็นถ้อยคำ งานสร้างสรรค์ หรือการสื่อสารที่ชัดขึ้น",
+    shortMeaning: "ฝึกพูด เขียน สื่อสาร และปล่อยความคิดสร้างสรรค์ออกมาอย่างเป็นรูปธรรม"
+  },
+  4: {
+    id: "gate_4_grounded_structure",
+    gate: 4,
+    name: "Gate 4 Integration",
+    title: "Grounded Structure",
+    thaiTitle: "แนวทางสร้างโครงสร้างที่มั่นคง",
+    keywords: ["structure", "discipline", "grounding", "routine"],
+    meaning: "พื้นที่ที่ Matrix ชวนให้อิสรภาพและแรงบันดาลใจมีฐานรองรับผ่านระบบ วินัย และจังหวะชีวิตที่ทำได้จริง",
+    shortMeaning: "ฝึกวางระบบเล็ก ๆ ทำต่อเนื่อง และสร้างฐานที่รองรับพลังของตัวเอง"
+  },
+  5: {
+    id: "gate_5_flexible_centering",
+    gate: 5,
+    name: "Gate 5 Integration",
+    title: "Flexible Centering",
+    thaiTitle: "แนวทางกลับสู่แก่นกลางอย่างยืดหยุ่น",
+    keywords: ["freedom", "change", "center", "adaptability"],
+    meaning: "พื้นที่ที่ Matrix ชวนให้ใช้อิสรภาพอย่างมีศูนย์กลาง เคลื่อนไหวได้โดยไม่หลุดจากแก่นของตัวเอง",
+    shortMeaning: "ฝึกอยู่กับการเปลี่ยนแปลงอย่างมีแกนกลางและเลือกอิสระที่ไม่กระจัดกระจาย"
+  },
+  6: {
+    id: "gate_6_relational_boundaries",
+    gate: 6,
+    name: "Gate 6 Integration",
+    title: "Relational Boundaries",
+    thaiTitle: "แนวทางดูแลความสัมพันธ์และขอบเขต",
+    keywords: ["relationship", "care", "boundary", "responsibility"],
+    meaning: "พื้นที่ที่ Matrix ชวนให้ความรักและความรับผิดชอบเดินคู่กับขอบเขตที่จริงใจ ไม่แบกทุกอย่างไว้คนเดียว",
+    shortMeaning: "ฝึกดูแลใจ ความสัมพันธ์ และขอบเขตอย่างสมดุล"
+  },
+  7: {
+    id: "gate_7_reflective_wisdom",
+    gate: 7,
+    name: "Gate 7 Integration",
+    title: "Reflective Wisdom",
+    thaiTitle: "แนวทางฟังปัญญาภายใน",
+    keywords: ["wisdom", "reflection", "inner knowing", "spirituality"],
+    meaning: "พื้นที่ที่ Matrix ชวนให้หยุดฟังเสียงลึกภายใน และเปลี่ยนความเข้าใจเป็นการเลือกที่สงบขึ้น",
+    shortMeaning: "ฝึกเงียบ สังเกต และใช้ปัญญาภายในนำทางการตัดสินใจ"
+  },
+  8: {
+    id: "gate_8_ethical_power",
+    gate: 8,
+    name: "Gate 8 Integration",
+    title: "Ethical Power",
+    thaiTitle: "แนวทางใช้อำนาจอย่างมีจริยธรรม",
+    keywords: ["power", "money", "management", "integrity"],
+    meaning: "พื้นที่ที่ Matrix ชวนให้จัดการพลัง อำนาจ เงิน และผลลัพธ์ด้วยความชัดเจนและความรับผิดชอบ",
+    shortMeaning: "ฝึกใช้พลังการบริหาร เงิน และการตัดสินใจอย่างตรงไปตรงมา"
+  },
+  9: {
+    id: "gate_9_purposeful_contribution",
+    gate: 9,
+    name: "Gate 9 Integration",
+    title: "Purposeful Contribution",
+    thaiTitle: "แนวทางส่งต่ออย่างมีความหมาย",
+    keywords: ["purpose", "compassion", "service", "humanity"],
+    meaning: "พื้นที่ที่ Matrix ชวนให้เมตตาและวิสัยทัศน์ใหญ่เชื่อมกับการส่งต่อที่ทำได้จริงในชีวิตประจำวัน",
+    shortMeaning: "ฝึกส่งต่อคุณค่า เมตตา และความหมายให้กลายเป็นประโยชน์ที่จับต้องได้"
+  }
+};
+
 export function getBeingById(id) {
   return beingDb[id] || beingDb[beingSelectionRules.fallback.primary];
 }

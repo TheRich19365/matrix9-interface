@@ -1,6 +1,7 @@
 import React, { useMemo, useRef, useState } from "react";
 import html2canvas from "html2canvas";
 import { Copy, Download, Heart, RefreshCw, Sparkles, Wand2 } from "lucide-react";
+import { appVersion } from "./data/appVersion.js";
 import { contactLinks } from "./data/contactLinks.js";
 import { exportSizes } from "./data/exportConfig.js";
 import { analyzeMatrix } from "./lib/analyzeMatrix.js";
@@ -35,7 +36,7 @@ function BeingArchitecturePanel({ reading }) {
         พลังต้นแบบที่สอดคล้องกับโครงสร้างพลังงาน ไม่ใช่การระบุชาติกำเนิดจริง และไม่แทนที่การอ่าน Core Matrix หลัก
       </p>
       <article className="rounded-3xl border border-fuchsia-200/20 bg-fuchsia-200/10 p-5">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fuchsia-100">Primary Core Energy</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-fuchsia-100">PRIMARY CORE ENERGY</p>
         <h3 className="mt-2 text-3xl font-black">{being.primary.name}</h3>
         <p className="mt-1 text-sm font-semibold text-amber-100">{being.primary.title}</p>
         <div className="mt-3 flex flex-wrap gap-2">{being.primary.keywords.slice(0, 4).map((keyword) => <Chip key={keyword} tone="purple">{keyword}</Chip>)}</div>
@@ -45,14 +46,16 @@ function BeingArchitecturePanel({ reading }) {
         <summary className="cursor-pointer text-sm font-semibold uppercase tracking-[0.18em] text-cyan-100 focus:outline-none focus:ring-4 focus:ring-cyan-200/25">ดูพลังสนับสนุนและการเชื่อมโยงกับโลก</summary>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {[
-            ["Supporting Star Resonance", being.supporting],
-            ["Earth Integration", being.earthIntegration]
+            ["SUPPORTING STAR RESONANCE", being.supporting],
+            ["EARTH INTEGRATION PATH", being.earthIntegration]
           ].map(([title, item]) => (
             <article key={title} className="rounded-2xl border border-white/10 bg-white/[0.055] p-4">
               <p className="text-xs uppercase tracking-[0.18em] text-cyan-100">{title}</p>
               <h3 className="mt-2 text-xl font-bold">{item.name}</h3>
+              {item.gate && <p className="mt-1 text-xs font-semibold text-amber-100">Gate {item.gate} · แนวทางเชื่อมพลังสู่ชีวิตจริง</p>}
               <p className="mt-1 text-xs text-fuchsia-100">{item.keywords.slice(0, 4).join(" · ")}</p>
-              <p className="mt-2 leading-7 text-slate-200">{item.shortMeaning}</p>
+              <p className="mt-2 leading-7 text-slate-200">{item.shortMeaning || item.meaning}</p>
+              {item.evidence?.length ? <p className="mt-2 text-xs leading-5 text-slate-400">Evidence: {item.evidence.slice(0, 3).join(" · ")}</p> : null}
             </article>
           ))}
         </div>
@@ -140,8 +143,12 @@ export default function App() {
       `Primary: ${being.primary.name} — ${being.primary.title}`,
       `Keywords: ${being.primary.keywords.slice(0, 4).join(", ")}`,
       `Meaning: ${being.primary.shortMeaning}`,
-      `Supporting: ${being.supporting.name}`,
-      `Earth Integration: ${being.earthIntegration.name}`
+      `Primary Evidence: ${being.primary.evidence?.join(" | ") || "-"}`,
+      `Supporting Star Resonance: ${being.supporting.name} â€” ${being.supporting.title}`,
+      `Supporting Evidence: ${being.supporting.evidence?.join(" | ") || "-"}`,
+      `Earth Integration Path: Gate ${being.earthIntegration.gate || "-"} â€” ${being.earthIntegration.title}`,
+      `Earth Integration Meaning: ${being.earthIntegration.shortMeaning || being.earthIntegration.meaning}`,
+      `Earth Integration Evidence: ${being.earthIntegration.evidence?.join(" | ") || "-"}`
     ];
     if (includeSacredInPrompt && sacredItems.length) {
       lines.push("", "SACRED RESONANCE — OPTIONAL SYMBOLIC LAYER", sacredItems.map((item) => `${item.name}: ${item.meaning}`).join("\n"));
@@ -227,7 +234,7 @@ export default function App() {
       <div className="relative mx-auto flex w-full max-w-6xl flex-col gap-6 px-4 py-5 sm:px-6 lg:px-8">
         <AppHeader onCopyLine={copyLineId} copied={copied === "line"} />
         <header className="rounded-[2rem] border border-white/10 bg-slate-950/55 p-6 shadow-aura backdrop-blur-xl sm:p-8">
-          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-200/10 px-3 py-1 text-xs font-semibold text-amber-100"><Sparkles className="h-3.5 w-3.5" />Living Soul Map V2</div>
+          <div className="mb-3 inline-flex items-center gap-2 rounded-full border border-amber-300/30 bg-amber-200/10 px-3 py-1 text-xs font-semibold text-amber-100"><Sparkles className="h-3.5 w-3.5" />{appVersion.experienceName} · {appVersion.shortVersion}</div>
           <h1 className="text-3xl font-bold leading-tight sm:text-5xl">Matrix 9 Interface</h1>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300">กรอกวันเดือนปีเกิดเพื่อสร้าง Matrix 9 Interface ระบบนี้เป็นการอ่านเชิงสัญลักษณ์และพฤติกรรม เพื่อการเข้าใจตัวเอง ไม่ใช่การฟันธงชะตาชีวิต</p>
         </header>
@@ -285,7 +292,7 @@ export default function App() {
           ) : (
             <section className="rounded-[1.6rem] border border-white/10 bg-slate-950/60 p-5 shadow-aura backdrop-blur-xl">
               <p className="text-sm font-semibold uppercase tracking-[0.18em] text-amber-100">Ready when you are</p>
-              <h2 className="mt-3 text-2xl font-black">Living Soul Map V2</h2>
+              <h2 className="mt-3 text-2xl font-black">{appVersion.experienceName}</h2>
               <p className="mt-3 text-sm leading-7 text-slate-300">ผลลัพธ์จะปรากฏหลังจากกด Generate เท่านั้น การแก้ไขฟอร์มหลังสร้างผลลัพธ์จะไม่เปลี่ยนผลที่แสดงจนกว่าจะกด Generate ใหม่</p>
             </section>
           )}

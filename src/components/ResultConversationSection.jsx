@@ -18,7 +18,8 @@ function ServiceCard({ tone, title, subtitle, energy, duration, children, topics
         </div>
         <div className="rounded-2xl border border-amber-200/30 bg-amber-200/10 px-4 py-2 text-right">
           <p className="text-[0.65rem] font-bold uppercase tracking-[0.16em] text-amber-100">Energy Exchange</p>
-          <p className="text-2xl font-black text-amber-50">{energy}</p>
+          <p className="text-[0.62rem] font-semibold text-amber-100/80">ค่าพลังงานแลกเปลี่ยน</p>
+          <p className="whitespace-nowrap text-2xl font-black text-amber-50">{energy}</p>
           <p className="text-xs text-slate-300">{duration}</p>
         </div>
       </div>
@@ -66,7 +67,7 @@ export default function ResultConversationSection({ onCopyLine, copied }) {
         <ServiceCard
           title="Focused Conversation"
           subtitle="พูดคุยหนึ่งประเด็น"
-          energy="444"
+          energy="444 THB"
           duration="ประมาณ 30 นาที"
           topics={["ความรักหรือความสัมพันธ์", "งาน เงิน คุณค่า หรือการตัดสินใจ", "จุดติดขัดปัจจุบัน", "เริ่มโปรเจกต์หรือหนึ่งคำถามสำคัญ"]}
           scope="เน้นหนึ่งประเด็นหลัก คุยแบบกระชับ ไม่ใช่รายงานยาว และไม่ใช่การอ่านชีวิตทั้งหมด อาจใช้ Matrix 9, Destiny Matrix snapshot, ไพ่ หรือเครื่องมือเชิงสัญลักษณ์เท่าที่เหมาะกับบทสนทนา"
@@ -81,7 +82,7 @@ export default function ResultConversationSection({ onCopyLine, copied }) {
           tone="deep"
           title="Destiny Matrix Deep Talk"
           subtitle="บทสนทนาเชิงลึก"
-          energy="777"
+          energy="777 THB"
           duration="ประมาณ 45-60 นาที"
           topics={["pattern ซ้ำในชีวิต", "จุดติดขัดและศักยภาพที่ยังไม่ถูกใช้", "บริบทส่วนตัว ความสัมพันธ์ งาน หรือธุรกิจ", "ทิศทางพัฒนาแบบลึกและเป็นรูปธรรม"]}
           scope="ใช้ Destiny Matrix เป็นฐานหลัก ร่วมกับ Matrix 9, ไพ่, AI-assisted organization/comparison และเครื่องมือเชิงสัญลักษณ์เมื่อเหมาะสม AI เป็นตัวช่วยจัดระบบ ส่วน Win เป็นผู้ฟัง ตีความ เชื่อมโยง ตั้งคำถาม และถือพื้นที่สนทนา"
