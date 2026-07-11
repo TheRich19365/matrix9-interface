@@ -49,6 +49,8 @@ export default function EcosystemFooter() {
             Email
           </FooterLink>
           <FooterLink href={contactLinks.portfolio.url}>Portfolio</FooterLink>
+          <FooterLink href={contactLinks.dailyEnergy.url}>Daily Energy</FooterLink>
+          <FooterLink href={contactLinks.thaiWisdom.url}>ฤกษ์ดี</FooterLink>
           <FooterLink href={contactLinks.facebook.url}>Facebook</FooterLink>
           <FooterLink href={contactLinks.instagram.url}>Instagram</FooterLink>
           {hasTikTok ? (

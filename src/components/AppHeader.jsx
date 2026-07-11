@@ -15,10 +15,16 @@ export default function AppHeader({ onCopyLine, copied }) {
             <h2 className="text-sm font-black leading-tight text-white sm:text-base">Living Soul Map</h2>
           </div>
         </div>
-        <div className="flex flex-wrap items-center gap-1.5 sm:gap-2">
-          <LineAction onCopyLine={onCopyLine} copied={copied} className="min-h-10 px-3 py-1.5 text-xs sm:min-h-11 sm:text-sm">LINE OA</LineAction>
-          <EmailAction className="min-h-10 px-3 py-1.5 text-xs sm:min-h-11 sm:text-sm" />
-          <ExternalContactLink href={contactLinks.portfolio.url} className="min-h-10 px-3 py-1.5 text-xs sm:text-sm">{contactLinks.portfolio.label}</ExternalContactLink>
+        <div className="flex flex-col gap-2 sm:items-end">
+          <p className="text-[0.62rem] font-bold uppercase tracking-[0.18em] text-slate-400">Soul of Love Ecosystem</p>
+          <div className="flex flex-wrap items-center gap-1.5 sm:justify-end sm:gap-2">
+            <ExternalContactLink href={contactLinks.portfolio.url} className="min-h-10 px-3 py-1.5 text-xs sm:text-sm">{contactLinks.portfolio.label}</ExternalContactLink>
+            <ExternalContactLink href={contactLinks.dailyEnergy.url} className="min-h-10 px-3 py-1.5 text-xs sm:text-sm">{contactLinks.dailyEnergy.label}</ExternalContactLink>
+            <ExternalContactLink href={contactLinks.thaiWisdom.url} className="min-h-10 px-3 py-1.5 text-xs sm:text-sm">{contactLinks.thaiWisdom.label}</ExternalContactLink>
+            <LineAction onCopyLine={onCopyLine} copied={copied} className="min-h-10 px-3 py-1.5 text-xs sm:min-h-11 sm:text-sm">LINE OA</LineAction>
+            <EmailAction className="min-h-10 px-3 py-1.5 text-xs sm:min-h-11 sm:text-sm" />
+          </div>
+          <p className="text-[0.68rem] leading-4 text-slate-500">สำรวจเครื่องมืออื่นในจักรวาล Soul of Love</p>
         </div>
       </div>
     </nav>

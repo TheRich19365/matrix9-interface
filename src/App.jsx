@@ -144,9 +144,9 @@ export default function App() {
       `Keywords: ${being.primary.keywords.slice(0, 4).join(", ")}`,
       `Meaning: ${being.primary.shortMeaning}`,
       `Primary Evidence: ${being.primary.evidence?.join(" | ") || "-"}`,
-      `Supporting Star Resonance: ${being.supporting.name} â€” ${being.supporting.title}`,
+      `Supporting Star Resonance: ${being.supporting.name} — ${being.supporting.title}`,
       `Supporting Evidence: ${being.supporting.evidence?.join(" | ") || "-"}`,
-      `Earth Integration Path: Gate ${being.earthIntegration.gate || "-"} â€” ${being.earthIntegration.title}`,
+      `Earth Integration Path: Gate ${being.earthIntegration.gate || "-"} — ${being.earthIntegration.title}`,
       `Earth Integration Meaning: ${being.earthIntegration.shortMeaning || being.earthIntegration.meaning}`,
       `Earth Integration Evidence: ${being.earthIntegration.evidence?.join(" | ") || "-"}`
     ];

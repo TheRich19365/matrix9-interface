@@ -56,6 +56,16 @@ export const contactLinks = {
     label: "Portfolio Hub",
     enabled: true
   },
+  dailyEnergy: {
+    url: "https://soul-of-love-daily-energy.vercel.app",
+    label: "Daily Energy",
+    enabled: true
+  },
+  thaiWisdom: {
+    url: "https://soul-of-love-daily-energy.vercel.app/thai-wisdom",
+    label: "ฤกษ์ดี",
+    enabled: true
+  },
   youtube: {
     url: "https://www.youtube.com/@SourceSignalMusic",
     label: "YouTube Music",
